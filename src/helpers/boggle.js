@@ -15,7 +15,7 @@ import { fetchBoggleSolutions } from "./apiService";
 };
 
 
-const solve = async (boardValues, dictionary) => {
+const solve = async (boardValues) => {
   // console.table(boardValues);
   // console.log(dictionary.length)
   const boardString =  boardValues

@@ -1,17 +1,22 @@
+import BoardRow from "./BoardRow";
 import BoardSquare from "./BoardSquare";
 
-const Board = ({rows}) => {
+const Board = ({board, editMode, updateBoard}) => {
   return (
     <div className="board">
-      {
-        rows.map((row,index) => {
-          return (
-            <div className="board_row" key={index} >
-              {row.map((letter, index) => <BoardSquare key={index} letter={letter}/>)}
-            </div>
-          )
-        })
-      }
+      {board.map((row, rowIdx) => {
+        return <BoardRow key={rowIdx}>
+          {row.map((letter, colIdx) =>{
+            return <BoardSquare
+              key={colIdx}
+              letter={letter}
+              coords={[rowIdx, colIdx]}
+              editMode={editMode}
+              updateBoard={updateBoard}
+            />
+          })}
+        </BoardRow>
+      })}
     </div>
    );
 }
