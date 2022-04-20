@@ -7,10 +7,8 @@ const fetchBoggleSolutions = (boardString) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ boardString })
   };
-
   return fetch(rootUrl+'/solve', requestOptions)
     .then(response => response.json())
 }
-
 
 module.exports = { fetchBoggleSolutions }

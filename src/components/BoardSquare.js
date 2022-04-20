@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const BoardSquare = ({letter, editMode, updateBoard, coords}) => {
-  const [input, setInput] = useState(letter);
+  const [input, setInput] = useState('');
 
   useEffect(() => {
     setInput(letter)
@@ -24,7 +24,7 @@ const BoardSquare = ({letter, editMode, updateBoard, coords}) => {
             value={input}
             onChange={handleChange}
           />
-        : letter.toUpperCase()
+        : <p>{letter.toUpperCase()}</p>
     }
   </div>
 

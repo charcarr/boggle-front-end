@@ -14,10 +14,11 @@ import { fetchBoggleSolutions } from "./apiService";
   return boardValues;
 };
 
-
+/**
+ * @return Array representing all valid word solutions to the boardValues parameter.
+ */
 const solve = async (boardValues) => {
   // console.table(boardValues);
-  // console.log(dictionary.length)
   const boardString =  boardValues
     .map(row => row.join(''))
     .join(' ');

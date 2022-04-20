@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Board from './components/Board';
 import SolutionList from './components/SolutionList';
-import './App.css';
 import boggle from './helpers/boggle';
+import './App.css';
 
 const BOARD_DIMENSION = 4;
 const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
@@ -15,7 +15,7 @@ function App() {
   const [editMode, setEditMode] = useState(false);
   const solutionsRef = useRef(null)
 
-  const scrollToSolutions = () => solutionsRef.current.scrollIntoView()
+  const scrollToSolutions = () => solutionsRef.current.scrollIntoView();
 
   const getNewBoard = () => {
     const newBoard = boggle.createRandomBoard(BOARD_DIMENSION, ALPHABET);
